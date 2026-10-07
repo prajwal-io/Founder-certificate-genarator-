@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0b09">
+  <meta name="description" content="Create your Back to Base Founder Investor Connect participation certificate.">
+  <title>Back to Base — Certificate of Participation</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230c0907'/%3E%3Cpath d='M8 48 31 15l25 33H8Z' fill='none' stroke='%23d9a75e' stroke-width='4'/%3E%3Cpath d='M20 48 32 31l12 17' fill='%23e8bc75'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--gold:#edc584;--cream:#fff0d0;--black:#0b0908}
+    *{box-sizing:border-box}
+    html{background:#080706;scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;color:#fff;font-family:Georgia,serif;overflow-x:hidden;background:radial-gradient(ellipse at 50% 15%,#3b2512 0%,#0a0806 48%,#030303 100%)}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    :focus-visible{outline:2px solid #ffdb93;outline-offset:4px}
+    .site{position:relative;isolation:isolate;max-width:1448px;margin:auto;box-shadow:0 0 120px #000}
+    .desktop-stage{position:relative;width:100%;aspect-ratio:1448/1086;overflow:hidden}
+    .reference{display:block;width:100%;height:100%;object-fit:cover;user-select:none;pointer-events:none}
+    .ambient{pointer-events:none;position:absolute;inset:0;z-index:1;overflow:hidden}
+    .ambient::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 8%,rgba(255,191,100,.19),transparent 28%);animation:halo 12s ease-in-out infinite alternate}
+    .ambient::after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:19%;background:radial-gradient(ellipse at 50% 100%,rgba(255,172,61,.16),transparent 70%);animation:glow 9s ease-in-out infinite alternate}
+    .spark{position:absolute;width:2px;height:2px;border-radius:50%;background:#ffe1a2;box-shadow:0 0 9px 3px rgba(255,179,70,.62);opacity:.35;animation:twinkle var(--time) ease-in-out infinite alternate}
+    .s1{left:13%;top:11%;--time:4s}.s2{left:85%;top:17%;--time:6s}.s3{left:90%;top:43%;--time:5s}.s4{left:10%;top:35%;--time:7s}.s5{left:78%;top:4%;--time:5.5s}
+    .s6{left:22%;top:27%;--time:4.8s}.s7{left:72%;top:31%;--time:6.4s}.s8{left:48%;top:5%;--time:3.8s}.s9{left:95%;top:25%;--time:5.2s}.s10{left:5%;top:22%;--time:6.8s}
+    @keyframes halo{to{transform:translateY(2%) scale(1.06);opacity:.65}}
+    @keyframes glow{to{transform:scale(1.16);opacity:.45}}
+    @keyframes twinkle{to{opacity:.85;transform:scale(1.6)}}
+    .desktop-form{position:absolute;inset:0;z-index:4;pointer-events:none}
+    .desktop-input{pointer-events:auto;position:absolute;left:37%;top:38.05%;width:28.95%;height:2.7%;border:0;border-radius:4px;color:#fff;background:#1c1a17;padding:0 .25em;font:clamp(11px,1.11vw,16px)/1.2 Arial,sans-serif;box-shadow:none;outline:none}
+    .desktop-input:focus-visible{outline:2px solid #ffda97;outline-offset:6px}
+    .desktop-input::placeholder{color:#f2f0ed;opacity:1}
+    .desktop-submit{pointer-events:auto;position:absolute;left:38.3%;top:43.05%;width:23.4%;height:4.53%;opacity:0;border:0;border-radius:100px}
+    .desktop-submit:focus-visible{opacity:1;background:rgba(255,221,154,.28);outline:2px solid #fff1cf;outline-offset:3px}
+    .certificate{display:block}
+    .desktop-certificate{position:absolute;z-index:3;left:22.24%;top:49.54%;width:55.52%;height:45.12%;cursor:zoom-in}
+    .desktop-certificate canvas,.mobile-certificate canvas{display:block;width:100%;height:100%}
+    .desktop-actions{position:relative;z-index:5;margin:-2px auto 28px;text-align:center;display:none;gap:12px;justify-content:center;flex-wrap:wrap}
+    .desktop-actions.is-visible{display:flex}
+    .action{border:1px solid #d6a765;border-radius:999px;padding:11px 22px;color:#2b1b0a;background:linear-gradient(140deg,#f9dfa9,#d89f50);font-family:Georgia,serif;font-size:16px;box-shadow:0 4px 18px rgba(186,112,27,.23)}
+    .action.secondary{background:#15110d;color:#f0cf97}
+    .action:hover{filter:brightness(1.1)}
+    .status{min-height:1.5em;margin:0;color:#ffe1a5;font:14px Arial,sans-serif;text-align:center}
+    .desktop-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+    .mobile-screen{display:none}
+    dialog{max-width:min(92vw,900px);padding:12px;border:1px solid #c99b57;border-radius:12px;background:#14100c;color:#fff;box-shadow:0 20px 80px #000;overflow:auto}
+    dialog::backdrop{background:rgba(0,0,0,.82)}
+    dialog canvas{display:block;width:min(82vw,804px);min-width:650px;height:auto}
+    .dialog-bar{display:flex;justify-content:space-between;align-items:center;margin:0 0 9px;gap:20px;font:14px Arial,sans-serif;color:#e8c485}
+    .close{border:1px solid #b78851;border-radius:50%;height:30px;width:30px;background:transparent;color:#fff;font-size:20px;line-height:1}
+    @media(max-width:760px){
+      .site{box-shadow:none;max-width:none}
+      .desktop-stage,.desktop-actions{display:none!important}
+      .mobile-screen{display:flex;position:relative;min-height:100svh;flex-direction:column;align-items:center;padding:56px 16px 32px;overflow:hidden;text-align:center;background-image:linear-gradient(180deg,rgba(5,5,5,.75),rgba(10,8,6,.48) 47%,rgba(7,5,4,.72)),url('mobile-scene.png');background-position:center,center center;background-size:cover,cover}
+      .mobile-screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0,rgba(231,147,47,.13),transparent 52%);animation:halo 12s ease-in-out infinite alternate}
+      .mobile-content{position:relative;z-index:2;width:min(100%,530px)}
+      .mobile-title{margin:0;color:#f9db9c;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(58px,15vw,88px);font-weight:500;line-height:.89;letter-spacing:-.05em;text-shadow:0 2px 0 #93612d,0 5px 24px #b26b27}
+      .mobile-kicker{margin:17px 0 0;color:#f6dda5;font-family:Cinzel,Georgia,serif;font-size:clamp(9px,2.6vw,13px);letter-spacing:.3em;white-space:nowrap}
+      .divider{display:flex;align-items:center;justify-content:center;gap:13px;margin:13px auto 17px;color:#f7e4ba}.divider::before,.divider::after{content:"";width:62px;height:1px;background:linear-gradient(90deg,transparent,#e1bd80)}.divider::after{transform:rotate(180deg)}
+      .mobile-description{margin:0 auto 26px;max-width:440px;color:#f6ede2;font-family:Arial,sans-serif;font-size:clamp(15px,3.9vw,18px);line-height:1.48}
+      .mobile-form label{display:block;margin-bottom:11px;color:#fff5e6;font-family:Arial,sans-serif;font-size:20px;letter-spacing:.01em}
+      .input-wrap{display:flex;align-items:center;gap:14px;height:53px;padding:0 15px;border:1px solid #c79755;border-radius:12px;background:rgba(22,19,16,.88);box-shadow:0 0 15px #9e642955}
+      .input-wrap svg{width:20px;flex:0 0 20px;color:#fff}
+      .mobile-input{width:100%;border:0;outline:0;background:transparent;color:white;font:16px Arial,sans-serif}
+      .mobile-input::placeholder{color:#f0eee8;opacity:1}
+      .mobile-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:min(100%,340px);height:52px;margin:15px auto 0;border:0;border-radius:100px;color:#261807;background:linear-gradient(145deg,#f8ddaa,#d9a458);font:600 17px Arial,sans-serif;box-shadow:0 8px 24px #9b632a70}
+      .mobile-status{margin-top:10px}
+      .mobile-certificate{display:block;width:100%;margin:12px auto 0;padding:0;border:0;background:transparent;box-shadow:0 10px 40px #0009;cursor:zoom-in}
+      .preview-label{margin:13px 0 0;color:#f1d3a0;font:12px Arial,sans-serif;letter-spacing:.03em}
+      .mobile-actions{display:none;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.mobile-actions.is-visible{display:flex}
+      .mobile-actions .action{font-size:14px;padding:10px 17px}
+    }
+    @media(max-width:390px){.mobile-screen{padding-inline:12px}.mobile-kicker{letter-spacing:.22em}.mobile-title{font-size:clamp(40px,11.8vw,46px)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ambient::before,.ambient::after,.spark,.mobile-screen::after{animation:none}}
+    @media print{body{background:white}.desktop-stage,.mobile-screen,.desktop-actions,dialog{display:none!important}#print-image{display:block!important;width:100%;height:auto}}
+    #print-image{display:none}
+    .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:28px;background:radial-gradient(ellipse at 50% 42%,#302011 0%,#100c08 45%,#080706 80%);text-align:center;animation:intro-exit .7s cubic-bezier(.22,1,.36,1) 2.25s forwards}
+    .intro-inner{width:min(100%,680px)}
+    .intro-eyebrow{margin:0 0 25px;color:#cfab72;font:14px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;animation:intro-rise .8s both}
+    .intro-title{margin:0;color:#f6d79b;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,10vw,104px);font-weight:500;line-height:1.05;letter-spacing:-.04em;animation:intro-rise 1s .15s both}
+    .intro-line{width:min(220px,60%);height:1px;margin:26px auto;background:linear-gradient(90deg,transparent,#edc584,transparent);transform-origin:center;animation:intro-line 1.2s .4s both}
+    .intro-event{margin:0;color:#e9d9bb;font-family:Cinzel,Georgia,serif;font-size:clamp(14px,3vw,20px);letter-spacing:.16em;line-height:1.6;animation:intro-rise .8s .5s both}
+    .intro-caption{margin:14px 0 0;color:#bda88a;font:14px Arial,sans-serif;animation:intro-rise .8s .75s both}
+    .intro-skip{position:absolute;right:24px;bottom:max(24px,env(safe-area-inset-bottom));padding:12px 18px;border:1px solid #80623d;border-radius:999px;background:transparent;color:#ead5b3;font:14px Arial,sans-serif;animation:intro-rise .8s .75s both}
+    .intro-skip:hover{background:#edc58418}
+    .intro[hidden]{display:none}
+    .intro-active{overflow:hidden}
+    .intro-active .site{animation:studio-reveal .85s cubic-bezier(.22,1,.36,1) 2.3s both}
+    @keyframes intro-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes intro-line{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+    @keyframes intro-exit{to{opacity:0;visibility:hidden;transform:translateY(-12px)}}
+    @keyframes studio-reveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.intro{display:none}.intro-active .site{animation:none}.intro-active{overflow:auto}}
+    @media print{.intro{display:none!important}}
+  </style>
+</head>
+<body>
+  <div class="intro" id="site-intro" hidden aria-label="Welcome to Back to Base">
+    <div class="intro-inner">
+      <p class="intro-eyebrow">Certificate Studio</p>
+      <p class="intro-title">Back to Base</p>
+      <div class="intro-line" aria-hidden="true"></div>
+      <p class="intro-event">Founder Investor Connect</p>
+      <p class="intro-caption">Certificate of Participation</p>
+    </div>
+    <button class="intro-skip" id="intro-skip" type="button">Skip intro</button>
+  </div>
+  <script>
+    (()=>{
+      const intro=document.getElementById('site-intro');
+      const reduceMotion=matchMedia('(prefers-reduced-motion:reduce)');
+      if(reduceMotion.matches)return;
+      const studio=()=>document.querySelector('.site');
+      document.body.classList.add('intro-active');
+      intro.hidden=false;
+      let timer;
+      const finishIntro=()=>{
+        clearTimeout(timer);
+        const restoreFocus=intro.contains(document.activeElement);
+        intro.hidden=true;
+        document.body.classList.remove('intro-active');
+        if(studio())studio().inert=false;
+        if(restoreFocus){const field=document.getElementById(matchMedia('(max-width:760px)').matches?'mobile-name':'desktop-name');field?.focus({preventScroll:true});}
+      };
+      document.getElementById('intro-skip').addEventListener('click',finishIntro);
+      intro.addEventListener('keydown',event=>{if(event.key==='Escape')finishIntro();});
+      reduceMotion.addEventListener('change',event=>{if(event.matches)finishIntro();});
+      document.addEventListener('DOMContentLoaded',()=>{if(!intro.hidden&&studio())studio().inert=true;},{once:true});
+      timer=setTimeout(finishIntro,3050);
+      addEventListener('pagehide',finishIntro,{once:true});
+    })();
+  </script>
+  <main class="site">
+    <section class="desktop-stage" aria-label="Back to Base certificate generator">
+      <h1 class="sr-only">Back to Base — Founder Investor Connect certificate generator</h1>
+      <img class="reference" src="blank-reference.png" alt="" aria-hidden="true">
+      <div class="ambient" aria-hidden="true"><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
+      <form class="desktop-form" id="desktop-form" autocomplete="off">
+        <label class="sr-only" for="desktop-name">Type out your name</label>
+        <input class="desktop-input" id="desktop-name" name="name" type="text" maxlength="70" placeholder="Arjun Mehta" aria-describedby="desktop-status" required>
+        <button class="desktop-submit" type="submit" aria-label="Generate Certificate">Generate Certificate</button>
+      </form>
+      <div class="desktop-certificate" id="desktop-certificate" role="img" aria-label="Certificate of participation preview"><canvas id="desktop-canvas" width="804" height="490"></canvas></div>
+      <p class="status desktop-status" id="desktop-status" role="status" aria-live="polite"></p>
+    </section>
+    <div class="desktop-actions" id="desktop-actions"><button class="action download" type="button">Download PNG</button><button class="action secondary print" type="button">Save as PDF</button></div>
+    <section class="mobile-screen" aria-label="Back to Base certificate generator">
+      <div class="ambient" aria-hidden="true"><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
+      <div class="mobile-content">
+        <h1 class="mobile-title">Back to Base</h1>
+        <p class="mobile-kicker">Founder Investor Connect</p>
+        <div class="divider" aria-hidden="true">✦</div>
+        <p class="mobile-description">Generate your official event certificate for Back to Base – a premier gathering of visionary founders, investors and ecosystem builders.</p>
+        <form class="mobile-form" id="mobile-form" autocomplete="off">
+          <label for="mobile-name">Type out your name</label>
+          <div class="input-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><input class="mobile-input" id="mobile-name" name="name" type="text" maxlength="70" placeholder="Arjun Mehta" aria-describedby="mobile-status" required></div>
+          <button class="mobile-submit" type="submit">Generate Certificate <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="status mobile-status" id="mobile-status" role="status" aria-live="polite"></p>
+        <button class="mobile-certificate" id="mobile-certificate" type="button" aria-label="Enlarge certificate preview"><canvas id="mobile-canvas" width="804" height="490"></canvas></button>
+        <p class="preview-label">Tap certificate to view it larger</p>
+        <div class="mobile-actions" id="mobile-actions"><button class="action download" type="button">Download PNG</button><button class="action secondary print" type="button">Save as PDF</button></div>
+      </div>
+    </section>
+  </main>
+  <dialog id="certificate-dialog" aria-label="Enlarged certificate preview"><div class="dialog-bar"><span>Certificate preview</span><button class="close" id="close-dialog" type="button" aria-label="Close preview">×</button></div><canvas id="dialog-canvas" width="804" height="490"></canvas></dialog>
+  <img id="print-image" alt="Certificate of participation">
+  <script>
+    const image = new Image();
+    const canvases = ['desktop-canvas','mobile-canvas','dialog-canvas'].map(id => document.getElementById(id));
+    const names = [document.getElementById('desktop-name'),document.getElementById('mobile-name')];
+    let recipient = '';
+    let ready = false;
+    function draw(canvas){
+      if(!ready) return;
+      const ctx=canvas.getContext('2d');
+      ctx.clearRect(0,0,804,490);
+      ctx.drawImage(image,322,538,804,490,0,0,804,490);
+      if(!recipient) return;
+      ctx.textAlign='center';ctx.textBaseline='middle';
+      let size=45;
+      ctx.font=`600 ${size}px Arial, sans-serif`;
+      while(ctx.measureText(recipient).width>430&&size>24){size-=1;ctx.font=`600 ${size}px Arial, sans-serif`}
+      ctx.fillStyle='#68430f';
+      ctx.fillText(recipient,402,226,430);
+    }
+    function drawAll(){canvases.forEach(draw)}
+    image.onload=async()=>{if(ready)return;ready=true;drawAll();try{await document.fonts.ready}catch(e){}drawAll()};
+    image.onerror=()=>setStatus('Certificate artwork could not load. Please reload this page.');
+    image.src='blank-reference.png';
+    if(image.complete&&image.naturalWidth)image.onload();
+    function setStatus(message){document.getElementById('desktop-status').textContent=message;document.getElementById('mobile-status').textContent=message}
+    function renderCertificate(name){
+      recipient=name;
+      names.forEach(field=>{field.value=name});
+      drawAll();
+      setStatus(`Certificate ready for ${name}.`);
+      document.getElementById('desktop-actions').classList.add('is-visible');
+      document.getElementById('mobile-actions').classList.add('is-visible');
+    }
+    function generate(event){
+      event.preventDefault();
+      const input=event.currentTarget.querySelector('input');
+      const name=input.value.trim().replace(/\s+/g,' ');
+      if(!name){input.focus();setStatus('Please enter your name.');return}
+      renderCertificate(name);
+      if(matchMedia('(max-width:760px)').matches)document.getElementById('mobile-certificate').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth',block:'center'});
+    }
+    document.getElementById('desktop-form').addEventListener('submit',generate);
+    document.getElementById('mobile-form').addEventListener('submit',generate);
+    function saveFile(href,filename){
+      const link=document.createElement('a');
+      link.href=href;link.download=filename;
+      document.body.appendChild(link);
+      link.click();link.remove();
+    }
+    document.querySelectorAll('.download').forEach(button=>button.addEventListener('click',()=>{
+      if(!recipient)return;
+      const filename=`Back-to-Base-Certificate-${recipient.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'Participant'}.png`;
+      saveFile(canvases[0].toDataURL('image/png'),filename);
+    }));
+    document.querySelectorAll('.print').forEach(button=>button.addEventListener('click',()=>{
+      if(!recipient)return;
+      const jpeg=atob(canvases[0].toDataURL('image/jpeg',.96).split(',')[1]);
+      const encoder=new TextEncoder(),parts=[],offsets=[0];
+      let length=0;
+      const add=bytes=>{parts.push(bytes);length+=bytes.length};
+      const str=value=>add(encoder.encode(value));
+      str('%PDF-1.4\n');
+      function object(id,body){offsets[id]=length;str(`${id} 0 obj\n${body}\nendobj\n`)}
+      object(1,'<< /Type /Catalog /Pages 2 0 R >>');
+      object(2,'<< /Type /Pages /Kids [3 0 R] /Count 1 >>');
+      object(3,'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 804 490] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>');
+      offsets[4]=length;
+      str(`4 0 obj\n<< /Type /XObject /Subtype /Image /Width 804 /Height 490 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>\nstream\n`);
+      const bytes=new Uint8Array(jpeg.length);
+      for(let i=0;i<jpeg.length;i++)bytes[i]=jpeg.charCodeAt(i);
+      add(bytes);str('\nendstream\nendobj\n');
+      const commands='q\n804 0 0 490 0 0 cm\n/Im0 Do\nQ\n';
+      object(5,`<< /Length ${encoder.encode(commands).length} >>\nstream\n${commands}endstream`);
+      const xref=length;
+      str('xref\n0 6\n0000000000 65535 f \n');
+      for(let id=1;id<=5;id++)str(`${String(offsets[id]).padStart(10,'0')} 00000 n \n`);
+      str(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
+      const blob=new Blob(parts,{type:'application/pdf'});
+      const url=URL.createObjectURL(blob);
+      const filename=`Back-to-Base-Certificate-${recipient.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'Participant'}.pdf`;
+      saveFile(url,filename);
+      setTimeout(()=>URL.revokeObjectURL(url),60000);
+    }));
+    const dialog=document.getElementById('certificate-dialog');
+    document.getElementById('mobile-certificate').addEventListener('click',()=>dialog.showModal());
+    document.getElementById('desktop-certificate').addEventListener('click',()=>dialog.showModal());
+    document.getElementById('close-dialog').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+    if(document.modelContext?.registerTool){
+      const lifecycle=new AbortController();
+      try{
+        Promise.resolve(document.modelContext.registerTool({
+          name:'generate_back_to_base_certificate',
+          title:'Generate Back to Base certificate',
+          description:'Enter a participant name and update the visible participation certificate preview. Download actions then become available on the page.',
+          inputSchema:{type:'object',properties:{name:{type:'string',minLength:1,maxLength:70}},required:['name'],additionalProperties:false},
+          annotations:{readOnlyHint:false,untrustedContentHint:false},
+          execute(input){
+            const name=typeof input?.name==='string'?input.name.trim().replace(/\s+/g,' '):'';
+            if(!name||name.length>70)throw new Error('Enter a participant name of 1 to 70 characters.');
+            renderCertificate(name);
+            return {name,status:'ready'};
+          }
+        },{signal:lifecycle.signal})).catch(()=>{});
+        addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
+      }catch(e){}
+    }
+  </script>
+</body>
+</html>
