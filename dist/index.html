@@ -14,7 +14,7 @@
     :root{color-scheme:dark;--gold:#edc584;--cream:#fff0d0;--black:#0b0908}
     *{box-sizing:border-box}
     html{width:100%;min-height:100%;margin:0;overflow-x:hidden;background:#080706;scroll-behavior:smooth}
-    body{width:100%;min-height:100%;margin:0;color:#fff;font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden;background-color:#050403;background-image:linear-gradient(180deg,rgba(5,4,3,.38),rgba(5,4,3,.58)),url('mobile-scene.png');background-position:center top,center top;background-size:cover,cover;background-repeat:no-repeat,no-repeat;background-attachment:fixed,fixed}
+    body{width:100%;min-height:100%;margin:0;color:#fff;font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden;background-color:#050403;background-image:linear-gradient(180deg,rgba(5,4,3,.38),rgba(5,4,3,.58)),url('mobile-scene.png');background-position:center top,center top;background-size:cover,cover;background-repeat:no-repeat,no-repeat;background-attachment:scroll,scroll}
     button,input{font:inherit}
     button{cursor:pointer}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -26,7 +26,7 @@
     .ambient{pointer-events:none;position:absolute;inset:0;z-index:1;overflow:hidden}
     .ambient::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 8%,rgba(255,191,100,.19),transparent 28%);animation:halo 12s ease-in-out infinite alternate}
     .ambient::after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:19%;background:radial-gradient(ellipse at 50% 100%,rgba(255,172,61,.16),transparent 70%);animation:glow 9s ease-in-out infinite alternate}
-    .starfield{position:absolute;inset:-35%;opacity:.34;mix-blend-mode:screen;background-image:radial-gradient(2px 2px at 8% 14%,#fff0c2 55%,transparent 100%),radial-gradient(1px 1px at 21% 36%,#ffd88e 55%,transparent 100%),radial-gradient(2px 2px at 37% 8%,#fff3d2 55%,transparent 100%),radial-gradient(1px 1px at 54% 24%,#f6c878 55%,transparent 100%),radial-gradient(2px 2px at 72% 13%,#fff1ce 55%,transparent 100%),radial-gradient(1px 1px at 89% 32%,#ffd98d 55%,transparent 100%),radial-gradient(1px 1px at 14% 78%,#fff0c2 55%,transparent 100%),radial-gradient(2px 2px at 46% 67%,#ffdfa0 55%,transparent 100%),radial-gradient(1px 1px at 81% 82%,#fff0c2 55%,transparent 100%);background-size:560px 560px;animation:star-drift 42s linear infinite,star-breathe 7s ease-in-out infinite alternate}
+    .starfield{position:absolute;inset:-35%;opacity:.34;background-image:radial-gradient(2px 2px at 8% 14%,#fff0c2 55%,transparent 100%),radial-gradient(1px 1px at 21% 36%,#ffd88e 55%,transparent 100%),radial-gradient(2px 2px at 37% 8%,#fff3d2 55%,transparent 100%),radial-gradient(1px 1px at 54% 24%,#f6c878 55%,transparent 100%),radial-gradient(2px 2px at 72% 13%,#fff1ce 55%,transparent 100%),radial-gradient(1px 1px at 89% 32%,#ffd98d 55%,transparent 100%),radial-gradient(1px 1px at 14% 78%,#fff0c2 55%,transparent 100%),radial-gradient(2px 2px at 46% 67%,#ffdfa0 55%,transparent 100%),radial-gradient(1px 1px at 81% 82%,#fff0c2 55%,transparent 100%);background-size:560px 560px;animation:star-breathe 8s ease-in-out infinite alternate}
     .light-sweep{position:absolute;inset:-40%;background:linear-gradient(112deg,transparent 38%,rgba(247,190,112,.055) 49%,transparent 60%);transform:translateX(-24%) rotate(-8deg);animation:sweep 18s ease-in-out infinite alternate}
     .spark{position:absolute;width:2px;height:2px;border-radius:50%;background:#ffe1a2;box-shadow:0 0 9px 3px rgba(255,179,70,.62);opacity:.35;animation:twinkle var(--time) ease-in-out infinite alternate}
     .glow-pop{position:absolute;width:36px;height:36px;margin:-18px;border-radius:50%;opacity:0;background:radial-gradient(circle,rgba(255,242,204,.95) 0 1.5px,rgba(250,190,103,.55) 2.5px,transparent 55%);animation:pop-glow 6.4s ease-out var(--delay) infinite}
@@ -40,7 +40,6 @@
     @keyframes halo{to{transform:translateY(2%) scale(1.06);opacity:.65}}
     @keyframes glow{to{transform:scale(1.16);opacity:.45}}
     @keyframes twinkle{to{opacity:.85;transform:scale(1.6)}}
-    @keyframes star-drift{to{background-position:280px -280px}}
     @keyframes star-breathe{to{opacity:.58}}
     @keyframes sweep{to{transform:translateX(24%) rotate(-8deg)}}
     @keyframes pop-glow{0%,100%{opacity:0;transform:scale(.22)}10%{opacity:.82;transform:scale(.75)}58%{opacity:.16;transform:scale(1.15)}72%{opacity:0;transform:scale(1.35)}}
@@ -59,6 +58,7 @@
     .action{border:1px solid #d6a765;border-radius:999px;padding:11px 22px;color:#2b1b0a;background:linear-gradient(140deg,#f9dfa9,#d89f50);font:600 15px/1 'DM Sans',Arial,sans-serif;letter-spacing:.01em;box-shadow:0 4px 18px rgba(186,112,27,.23)}
     .action.secondary{background:#15110d;color:#f0cf97}
     .action:hover{filter:brightness(1.1)}
+    .action:disabled{cursor:wait;opacity:.72;filter:none}
     .status{min-height:1.5em;margin:0;color:#ffe1a5;font:14px Arial,sans-serif;text-align:center}
     .desktop-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
     .mobile-screen{display:none}
@@ -71,8 +71,9 @@
       .site{width:100%;min-height:100vh;box-shadow:none}
       .desktop-stage,.desktop-actions{display:none!important}
       .mobile-screen{display:flex;position:relative;min-height:100svh;flex-direction:column;align-items:center;padding:56px 16px 32px;overflow:hidden;text-align:center;background-image:linear-gradient(180deg,rgba(5,5,5,.75),rgba(10,8,6,.48) 47%,rgba(7,5,4,.72)),url('mobile-scene.png');background-position:center,center center;background-size:cover,cover}
-      .mobile-screen::before{content:"";position:absolute;inset:-20%;z-index:1;pointer-events:none;opacity:.31;background-image:radial-gradient(2px 2px at 12% 18%,#fff0c2 55%,transparent 100%),radial-gradient(1px 1px at 30% 64%,#ffd88e 55%,transparent 100%),radial-gradient(2px 2px at 55% 24%,#fff3d2 55%,transparent 100%),radial-gradient(1px 1px at 78% 46%,#f6c878 55%,transparent 100%),radial-gradient(2px 2px at 88% 83%,#fff1ce 55%,transparent 100%);background-size:420px 420px;animation:star-drift 34s linear infinite,star-breathe 7s ease-in-out infinite alternate}
-      .mobile-screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0,rgba(231,147,47,.13),transparent 52%);animation:halo 12s ease-in-out infinite alternate}
+      .mobile-screen::before{content:"";position:absolute;inset:-20%;z-index:1;pointer-events:none;opacity:.31;background-image:radial-gradient(2px 2px at 12% 18%,#fff0c2 55%,transparent 100%),radial-gradient(1px 1px at 30% 64%,#ffd88e 55%,transparent 100%),radial-gradient(2px 2px at 55% 24%,#fff3d2 55%,transparent 100%),radial-gradient(1px 1px at 78% 46%,#f6c878 55%,transparent 100%),radial-gradient(2px 2px at 88% 83%,#fff1ce 55%,transparent 100%);background-size:420px 420px;animation:star-breathe 9s ease-in-out infinite alternate}
+      .mobile-screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0,rgba(231,147,47,.13),transparent 52%);animation:halo 16s ease-in-out infinite alternate}
+      .mobile-screen .starfield,.mobile-screen .light-sweep,.mobile-screen .spark,.mobile-screen .glow-pop,.mobile-screen .meteor{display:none}
       .mobile-content{position:relative;z-index:2;width:min(100%,530px)}
       .mobile-title{margin:0;color:#f9db9c;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(58px,15vw,88px);font-weight:500;line-height:.89;letter-spacing:-.05em;text-shadow:0 2px 0 #93612d,0 5px 24px #b26b27}
       .mobile-kicker{margin:17px 0 0;color:#f6dda5;font-family:Cinzel,Georgia,serif;font-size:clamp(9px,2.6vw,13px);letter-spacing:.3em;white-space:nowrap}
@@ -93,6 +94,7 @@
     }
     @media(max-width:390px){.mobile-screen{padding-inline:12px}.mobile-kicker{letter-spacing:.22em}.mobile-title{font-size:clamp(40px,11.8vw,46px)}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ambient::before,.ambient::after,.starfield,.light-sweep,.spark,.glow-pop,.glow-pop::after,.meteor,.mobile-screen::before,.mobile-screen::after{animation:none}}
+    .page-hidden .ambient,.page-hidden .ambient::before,.page-hidden .ambient::after,.page-hidden .ambient *,.page-hidden .mobile-screen::before,.page-hidden .mobile-screen::after,.page-hidden .intro,.page-hidden .intro::before,.page-hidden .intro::after{animation-play-state:paused!important}
     @media print{body{background:white}.desktop-stage,.mobile-screen,.desktop-actions,dialog{display:none!important}#print-image{display:block!important;width:100%;height:auto}}
     #print-image{display:none}
     .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;padding:28px;background:radial-gradient(ellipse at 50% 42%,#382513 0%,#100c08 45%,#050505 100%);text-align:center;animation:intro-dissolve .55s cubic-bezier(.22,1,.36,1) 1.95s forwards}
@@ -200,14 +202,18 @@
     const image = new Image();
     const canvases = ['desktop-canvas','mobile-canvas','dialog-canvas'].map(id => document.getElementById(id));
     const names = [document.getElementById('desktop-name'),document.getElementById('mobile-name')];
-    const certificateScale = matchMedia('(max-width:760px)').matches ? 2 : 3;
-    canvases.forEach(canvas=>{canvas.width=804*certificateScale;canvas.height=490*certificateScale});
+    const mobileViewport = matchMedia('(max-width:760px)');
+    const certificateScale = mobileViewport.matches ? 2 : 3;
+    canvases[0].width=804*certificateScale;canvases[0].height=490*certificateScale;
+    canvases[1].width=804;canvases[1].height=490;
+    canvases[2].width=804;canvases[2].height=490;
     let recipient = '';
     let ready = false;
     function draw(canvas){
       if(!ready) return;
       const ctx=canvas.getContext('2d');
-      ctx.setTransform(certificateScale,0,0,certificateScale,0,0);
+      const scale=canvas.width/804;
+      ctx.setTransform(scale,0,0,scale,0,0);
       ctx.clearRect(0,0,804,490);
       ctx.drawImage(image,322,538,804,490,0,0,804,490);
       if(!recipient) return;
@@ -218,11 +224,16 @@
       ctx.fillStyle='#68430f';
       ctx.fillText(recipient,402,226,430);
     }
-    function drawAll(){canvases.forEach(draw)}
-    image.onload=async()=>{if(ready)return;ready=true;drawAll();try{await document.fonts.ready}catch(e){}drawAll()};
+    function drawAll(){
+      const targets=new Set([canvases[0],mobileViewport.matches?canvases[1]:canvases[0]]);
+      if(document.getElementById('certificate-dialog').open)targets.add(canvases[2]);
+      targets.forEach(draw);
+    }
+    image.onload=()=>{if(ready)return;ready=true;drawAll()};
     image.onerror=()=>setStatus('Certificate artwork could not load. Please reload this page.');
-    image.src='blank-reference.png';
+    image.decoding='async';image.fetchPriority='high';image.src='blank-reference.png';
     if(image.complete&&image.naturalWidth)image.onload();
+    if(document.fonts?.ready)document.fonts.ready.then(()=>{if(recipient)drawAll()}).catch(()=>{});
     function setStatus(message){document.getElementById('desktop-status').textContent=message;document.getElementById('mobile-status').textContent=message}
     function renderCertificate(name){
       recipient=name;
@@ -248,15 +259,26 @@
       document.body.appendChild(link);
       link.click();link.remove();
     }
-    document.querySelectorAll('.download').forEach(button=>button.addEventListener('click',()=>{
+    function recipientFilename(extension){return `Back-to-Base-Certificate-${recipient.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'Participant'}.${extension}`}
+    function canvasBlob(canvas,type,quality){return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Could not prepare the certificate file.')),type,quality))}
+    function downloadBlob(blob,filename){
+      const url=URL.createObjectURL(blob);saveFile(url,filename);
+      setTimeout(()=>URL.revokeObjectURL(url),30000);
+    }
+    document.querySelectorAll('.download').forEach(button=>button.addEventListener('click',async()=>{
       if(!recipient)return;
-      const filename=`Back-to-Base-Certificate-${recipient.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'Participant'}.png`;
-      saveFile(canvases[0].toDataURL('image/png'),filename);
+      button.disabled=true;button.setAttribute('aria-busy','true');setStatus('Preparing your PNG…');
+      try{downloadBlob(await canvasBlob(canvases[0],'image/png'),recipientFilename('png'));setStatus('Your PNG download is ready.')}
+      catch(error){setStatus('The PNG could not be prepared. Please try again.')}
+      finally{button.disabled=false;button.removeAttribute('aria-busy')}
     }));
-    document.querySelectorAll('.print').forEach(button=>button.addEventListener('click',()=>{
+    document.querySelectorAll('.print').forEach(button=>button.addEventListener('click',async()=>{
       if(!recipient)return;
+      button.disabled=true;button.setAttribute('aria-busy','true');setStatus('Preparing your PDF…');
+      try{
+      const jpegBlob=await canvasBlob(canvases[0],'image/jpeg',.96);
+      const jpeg=new Uint8Array(await jpegBlob.arrayBuffer());
       const pixelWidth=canvases[0].width,pixelHeight=canvases[0].height;
-      const jpeg=atob(canvases[0].toDataURL('image/jpeg',.98).split(',')[1]);
       const encoder=new TextEncoder(),parts=[],offsets=[0];
       let length=0;
       const add=bytes=>{parts.push(bytes);length+=bytes.length};
@@ -268,9 +290,7 @@
       object(3,'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 804 490] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>');
       offsets[4]=length;
       str(`4 0 obj\n<< /Type /XObject /Subtype /Image /Width ${pixelWidth} /Height ${pixelHeight} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>\nstream\n`);
-      const bytes=new Uint8Array(jpeg.length);
-      for(let i=0;i<jpeg.length;i++)bytes[i]=jpeg.charCodeAt(i);
-      add(bytes);str('\nendstream\nendobj\n');
+      add(jpeg);str('\nendstream\nendobj\n');
       const commands='q\n804 0 0 490 0 0 cm\n/Im0 Do\nQ\n';
       object(5,`<< /Length ${encoder.encode(commands).length} >>\nstream\n${commands}endstream`);
       const xref=length;
@@ -278,16 +298,18 @@
       for(let id=1;id<=5;id++)str(`${String(offsets[id]).padStart(10,'0')} 00000 n \n`);
       str(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);
       const blob=new Blob(parts,{type:'application/pdf'});
-      const url=URL.createObjectURL(blob);
-      const filename=`Back-to-Base-Certificate-${recipient.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'Participant'}.pdf`;
-      saveFile(url,filename);
-      setTimeout(()=>URL.revokeObjectURL(url),60000);
+      downloadBlob(blob,recipientFilename('pdf'));setStatus('Your PDF download is ready.')
+      }catch(error){setStatus('The PDF could not be prepared. Please try again.')}
+      finally{button.disabled=false;button.removeAttribute('aria-busy')}
     }));
     const dialog=document.getElementById('certificate-dialog');
-    document.getElementById('mobile-certificate').addEventListener('click',()=>dialog.showModal());
-    document.getElementById('desktop-certificate').addEventListener('click',()=>dialog.showModal());
+    function openCertificate(){canvases[2].width=1608;canvases[2].height=980;dialog.showModal();draw(canvases[2])}
+    document.getElementById('mobile-certificate').addEventListener('click',openCertificate);
+    document.getElementById('desktop-certificate').addEventListener('click',openCertificate);
     document.getElementById('close-dialog').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+    dialog.addEventListener('close',()=>{canvases[2].width=804;canvases[2].height=490});
+    document.addEventListener('visibilitychange',()=>document.body.classList.toggle('page-hidden',document.hidden));
     if(document.modelContext?.registerTool){
       const lifecycle=new AbortController();
       try{
@@ -310,4 +332,5 @@
   </script>
 </body>
 </html>
+
 
