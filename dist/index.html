@@ -28,6 +28,9 @@
     .starfield{position:absolute;inset:-35%;opacity:.34;mix-blend-mode:screen;background-image:radial-gradient(2px 2px at 8% 14%,#fff0c2 55%,transparent 100%),radial-gradient(1px 1px at 21% 36%,#ffd88e 55%,transparent 100%),radial-gradient(2px 2px at 37% 8%,#fff3d2 55%,transparent 100%),radial-gradient(1px 1px at 54% 24%,#f6c878 55%,transparent 100%),radial-gradient(2px 2px at 72% 13%,#fff1ce 55%,transparent 100%),radial-gradient(1px 1px at 89% 32%,#ffd98d 55%,transparent 100%),radial-gradient(1px 1px at 14% 78%,#fff0c2 55%,transparent 100%),radial-gradient(2px 2px at 46% 67%,#ffdfa0 55%,transparent 100%),radial-gradient(1px 1px at 81% 82%,#fff0c2 55%,transparent 100%);background-size:560px 560px;animation:star-drift 42s linear infinite,star-breathe 7s ease-in-out infinite alternate}
     .light-sweep{position:absolute;inset:-40%;background:linear-gradient(112deg,transparent 38%,rgba(247,190,112,.055) 49%,transparent 60%);transform:translateX(-24%) rotate(-8deg);animation:sweep 18s ease-in-out infinite alternate}
     .spark{position:absolute;width:2px;height:2px;border-radius:50%;background:#ffe1a2;box-shadow:0 0 9px 3px rgba(255,179,70,.62);opacity:.35;animation:twinkle var(--time) ease-in-out infinite alternate}
+    .glow-pop{position:absolute;width:36px;height:36px;margin:-18px;border-radius:50%;opacity:0;background:radial-gradient(circle,rgba(255,242,204,.95) 0 1.5px,rgba(250,190,103,.55) 2.5px,transparent 55%);animation:pop-glow 6.4s ease-out var(--delay) infinite}
+    .glow-pop::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,218,153,.7);border-radius:50%;box-shadow:0 0 14px rgba(244,181,90,.55);animation:pop-ring 6.4s ease-out var(--delay) infinite}
+    .gp1{left:19%;top:28%;--delay:.2s}.gp2{left:49%;top:16%;--delay:2.3s}.gp3{left:82%;top:38%;--delay:4.1s}
     .s1{left:13%;top:11%;--time:4s}.s2{left:85%;top:17%;--time:6s}.s3{left:90%;top:43%;--time:5s}.s4{left:10%;top:35%;--time:7s}.s5{left:78%;top:4%;--time:5.5s}
     .s6{left:22%;top:27%;--time:4.8s}.s7{left:72%;top:31%;--time:6.4s}.s8{left:48%;top:5%;--time:3.8s}.s9{left:95%;top:25%;--time:5.2s}.s10{left:5%;top:22%;--time:6.8s}
     @keyframes halo{to{transform:translateY(2%) scale(1.06);opacity:.65}}
@@ -36,6 +39,8 @@
     @keyframes star-drift{to{background-position:280px -280px}}
     @keyframes star-breathe{to{opacity:.58}}
     @keyframes sweep{to{transform:translateX(24%) rotate(-8deg)}}
+    @keyframes pop-glow{0%,100%{opacity:0;transform:scale(.22)}10%{opacity:.82;transform:scale(.75)}58%{opacity:.16;transform:scale(1.15)}72%{opacity:0;transform:scale(1.35)}}
+    @keyframes pop-ring{0%{opacity:.75;transform:scale(.08)}72%,100%{opacity:0;transform:scale(3.2)}}
     .desktop-form{position:absolute;inset:0;z-index:4;pointer-events:none}
     .desktop-input{pointer-events:auto;position:absolute;left:37%;top:38.05%;width:28.95%;height:2.7%;border:0;border-radius:4px;color:#fff;background:#1c1a17;padding:0 .25em;font:clamp(11px,1.11vw,16px)/1.2 Arial,sans-serif;box-shadow:none;outline:none}
     .desktop-input::placeholder{color:#f2f0ed;opacity:1}
@@ -81,7 +86,7 @@
       .mobile-actions .action{font-size:14px;padding:10px 17px}
     }
     @media(max-width:390px){.mobile-screen{padding-inline:12px}.mobile-kicker{letter-spacing:.22em}.mobile-title{font-size:clamp(40px,11.8vw,46px)}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ambient::before,.ambient::after,.starfield,.light-sweep,.spark,.mobile-screen::before,.mobile-screen::after{animation:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ambient::before,.ambient::after,.starfield,.light-sweep,.spark,.glow-pop,.glow-pop::after,.mobile-screen::before,.mobile-screen::after{animation:none}}
     @media print{body{background:white}.desktop-stage,.mobile-screen,.desktop-actions,dialog{display:none!important}#print-image{display:block!important;width:100%;height:auto}}
     #print-image{display:none}
     .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;padding:28px;background:radial-gradient(ellipse at 50% 42%,#382513 0%,#100c08 45%,#050505 100%);text-align:center;animation:intro-dissolve .55s cubic-bezier(.22,1,.36,1) 1.95s forwards}
@@ -92,7 +97,7 @@
     .intro-mark{position:relative;display:grid;place-items:center;width:58px;height:58px;margin:0 auto 24px;border:1px solid rgba(237,197,132,.8);border-radius:50%;color:#f9d99f;font:500 24px 'Cormorant Garamond',Georgia,serif;box-shadow:0 0 30px rgba(236,177,92,.16);animation:mark-arrive .8s cubic-bezier(.16,1,.3,1) both}
     .intro-mark::before{content:"";position:absolute;inset:-6px;border:1px solid rgba(237,197,132,.38);border-right-color:transparent;border-radius:50%;animation:orbit 5s linear infinite}
     .intro-mark::after{content:"";position:absolute;top:-7px;left:50%;width:5px;height:5px;border-radius:50%;background:#fff1cc;box-shadow:0 0 10px 3px #eab761;transform:translateX(-50%)}
-    .intro-eyebrow{margin:0 0 16px;color:#cfab72;font:12px Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;animation:intro-rise .65s .12s both}
+    .intro-eyebrow{margin:0 0 16px;color:#cfab72;font:clamp(9px,2vw,12px) Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;animation:intro-rise .65s .12s both}
     .intro-title{margin:0;color:#f6d79b;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,10vw,100px);font-weight:500;line-height:1.02;letter-spacing:-.04em;text-shadow:0 0 34px rgba(232,177,96,.2);animation:title-arrive .9s .18s cubic-bezier(.16,1,.3,1) both}
     .intro-line{width:min(210px,58%);height:1px;margin:20px auto;background:linear-gradient(90deg,transparent,#edc584,transparent);transform-origin:center;animation:intro-line .85s .44s both}
     .intro-event{margin:0;color:#e9d9bb;font-family:Cinzel,Georgia,serif;font-size:clamp(13px,2.7vw,18px);letter-spacing:.18em;line-height:1.6;animation:intro-rise .65s .46s both}
@@ -119,11 +124,11 @@
   <div class="intro" id="site-intro" hidden aria-label="Welcome to Back to Base">
     <div class="intro-inner">
       <div class="intro-mark" aria-hidden="true">B</div>
-      <p class="intro-eyebrow">You’re invited to</p>
+      <p class="intro-eyebrow">Founder Investor Connect</p>
       <h1 class="intro-title">Back to Base</h1>
       <div class="intro-line" aria-hidden="true"></div>
       <p class="intro-event">Founder Investor Connect</p>
-      <p class="intro-caption">A gathering of founders, investors and builders</p>
+      <p class="intro-caption">Certificate Website</p>
     </div>
     <button class="intro-skip" id="intro-skip" type="button">Skip intro</button>
   </div>
@@ -156,7 +161,7 @@
     <section class="desktop-stage" aria-label="Back to Base certificate generator">
       <h1 class="sr-only">Back to Base — Founder Investor Connect certificate generator</h1>
       <img class="reference" src="blank-reference.png" alt="" aria-hidden="true">
-      <div class="ambient" aria-hidden="true"><div class="starfield"></div><div class="light-sweep"></div><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
+      <div class="ambient" aria-hidden="true"><div class="starfield"></div><div class="light-sweep"></div><i class="glow-pop gp1"></i><i class="glow-pop gp2"></i><i class="glow-pop gp3"></i><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
       <form class="desktop-form" id="desktop-form" autocomplete="off">
         <label class="sr-only" for="desktop-name">Type out your name</label>
         <input class="desktop-input" id="desktop-name" name="name" type="text" maxlength="70" placeholder="Arjun Mehta" aria-describedby="desktop-status" required>
@@ -167,7 +172,7 @@
     </section>
     <div class="desktop-actions" id="desktop-actions"><button class="action download" type="button">Download PNG</button><button class="action secondary print" type="button">Save as PDF</button></div>
     <section class="mobile-screen" aria-label="Back to Base certificate generator">
-      <div class="ambient" aria-hidden="true"><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
+      <div class="ambient" aria-hidden="true"><i class="glow-pop gp1"></i><i class="glow-pop gp2"></i><i class="glow-pop gp3"></i><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i><i class="spark s5"></i><i class="spark s6"></i><i class="spark s7"></i><i class="spark s8"></i><i class="spark s9"></i><i class="spark s10"></i></div>
       <div class="mobile-content">
         <h1 class="mobile-title">Back to Base</h1>
         <p class="mobile-kicker">Founder Investor Connect</p>
