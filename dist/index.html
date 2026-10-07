@@ -97,7 +97,7 @@
     .page-hidden .ambient,.page-hidden .ambient::before,.page-hidden .ambient::after,.page-hidden .ambient *,.page-hidden .mobile-screen::before,.page-hidden .mobile-screen::after,.page-hidden .intro,.page-hidden .intro::before,.page-hidden .intro::after{animation-play-state:paused!important}
     @media print{body{background:white}.desktop-stage,.mobile-screen,.desktop-actions,dialog{display:none!important}#print-image{display:block!important;width:100%;height:auto}}
     #print-image{display:none}
-    .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;padding:28px;background:radial-gradient(ellipse at 50% 42%,#382513 0%,#100c08 45%,#050505 100%);text-align:center;animation:intro-dissolve .55s cubic-bezier(.22,1,.36,1) 1.95s forwards}
+    .intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;padding:28px;background:radial-gradient(ellipse at 50% 42%,#382513 0%,#100c08 45%,#050505 100%);text-align:center;animation:intro-dissolve .4s cubic-bezier(.22,1,.36,1) 1.05s forwards}
     .intro::before,.intro::after{content:"";position:absolute;inset:-30%;pointer-events:none}
     .intro::before{background:radial-gradient(ellipse at 25% 35%,rgba(239,173,83,.16),transparent 35%),radial-gradient(ellipse at 74% 68%,rgba(211,136,50,.13),transparent 32%);animation:intro-aurora 9s ease-in-out infinite alternate}
     .intro::after{inset:0;background-image:radial-gradient(2px 2px at 18% 22%,#ffe9ba 55%,transparent 100%),radial-gradient(1px 1px at 76% 19%,#ffd489 55%,transparent 100%),radial-gradient(2px 2px at 83% 71%,#fff0cc 55%,transparent 100%),radial-gradient(1px 1px at 29% 79%,#f6c878 55%,transparent 100%);opacity:.42;animation:intro-stars 12s linear infinite}
@@ -113,7 +113,7 @@
     .intro-skip:hover{border-color:#edc584;background:#edc58418}
     .intro[hidden]{display:none}
     .intro-active{overflow:hidden}
-    .intro-active .site{animation:studio-reveal .7s cubic-bezier(.22,1,.36,1) 2s both}
+    .intro-active .site{animation:studio-reveal .55s cubic-bezier(.22,1,.36,1) 1.05s both}
     @keyframes intro-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes title-arrive{from{opacity:0;filter:blur(8px);transform:translateY(9px) scale(.97)}to{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}}
     @keyframes intro-line{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
@@ -159,7 +159,7 @@
       intro.addEventListener('keydown',event=>{if(event.key==='Escape')finishIntro();});
       reduceMotion.addEventListener('change',event=>{if(event.matches)finishIntro();});
       document.addEventListener('DOMContentLoaded',()=>{if(!intro.hidden&&studio())studio().inert=true;},{once:true});
-      timer=setTimeout(finishIntro,2550);
+      timer=setTimeout(finishIntro,1600);
       addEventListener('pagehide',finishIntro,{once:true});
     })();
   </script>
@@ -332,5 +332,6 @@
   </script>
 </body>
 </html>
+
 
 
