@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "project": {
+    "name": "github-founder-certificate-generator",
+    "productType": "Responsive event certificate generator",
+    "stack": ["HTML", "CSS", "JavaScript", "Canvas"]
+  },
+  "sources": {
+    "tokens": ["dist/index.html :root CSS variables"],
+    "components": ["dist/index.html certificate generator controls"],
+    "assets": ["dist/blank-reference.png", "dist/mobile-scene.png"],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "dark",
+    "colors": {
+      "background": "#080706",
+      "surface": "#0b0908",
+      "gold": "#edc584",
+      "cream": "#fff0d0",
+      "certificate": "warm ivory with fine gold detailing"
+    },
+    "typography": {
+      "ui": "DM Sans, Arial, sans-serif",
+      "display": "Cormorant Garamond, Georgia, serif",
+      "kicker": "Cinzel, Georgia, serif"
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {
+      "background": "slow ambient glow, stars, and occasional meteors",
+      "interaction": "short hover, press, focus, and generated-certificate feedback",
+      "reducedMotion": "honor prefers-reduced-motion"
+    },
+    "density": "focused"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": ["native HTML controls", "Canvas certificate preview"],
+    "patterns": ["responsive desktop artwork overlay and mobile-first generator", "accessible native dialog"]
+  },
+  "constraints": {
+    "must": [
+      "Preserve the Back to Base black, gold, and ivory visual identity.",
+      "Keep supplied certificate artwork and participant-name placement intact.",
+      "Keep the existing no-build static deployment and PNG/PDF workflows.",
+      "Keep the form comfortable to use on mobile and desktop.",
+      "Respect reduced-motion preferences."
+    ],
+    "avoid": [
+      "Do not introduce a framework or unnecessary runtime dependencies.",
+      "Avoid loud or lengthy interaction animations that slow the certificate workflow.",
+      "Do not alter the certificate artwork or its content."
+    ]
+  },
+  "decisions": [
+    {
+      "date": "2026-10-09",
+      "decision": "Keep the existing premium layout and use concise tactile feedback on controls plus a brief certificate reveal to make the interface feel more responsive.",
+      "status": "implemented"
+    }
+  ],
+  "evidence": [
+    "dist/index.html",
+    "dist/blank-reference.png",
+    "dist/mobile-scene.png"
+  ],
+  "generatedAt": "2026-10-09T06:01:56.864Z"
+}
+
